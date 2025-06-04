@@ -4,7 +4,7 @@ function addItem () {
     const itemName = document.querySelector("#item").value
     
     if (itemName === "") {
-        alert ("Digite um item vàlido!")
+        alert ("Digite um item válido!")
         return
     }
 
@@ -41,7 +41,7 @@ function showItemslist() {
                 <img src="./assets/trash-icon.svg" alt="trash icon">
             </button>
         </div>
-        ` 
+        `
     })
 
     localStorage.setItem("items", JSON.stringify(items))
@@ -64,9 +64,9 @@ function removeItem(itemName) {
         showItemslist()
 }
 
-function checked(itemName){
+function checkItem(itemName){
        const item = items.find((item) => item.name === itemName)
-       item.checked != item.checked
+       item.checked = !item.checked
        showItemslist()
 }
 
@@ -74,13 +74,14 @@ function addHideWarningClass() {
     document.querySelector(".warning").classList.add("hide-warning")
 } 
 
-function verifyLocalStronageItens() {
-     const localStorageItens = localStorage.getItem("items")
+function verifyLocalStorageItems(){
+    const localStorageItems = localStorage.getItem("items")
 
-     if (localStorageItens) {
-        items = JSON.parse(localStorageItens)
-        showItemslist()
-     }
+
+    if (localStorageItems) {
+        items = JSON.parse(localStorageItems)
+        showItemsList()
+    }
 }
 
-verifyLocalStronageItens()
+verifyLocalStorageItems()
