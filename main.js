@@ -44,7 +44,7 @@ function showItemslist() {
         ` 
     })
 
-    localStorage.setItem("itens", JSON.stringify(itens))
+    localStorage.setItem("items", JSON.stringify(items))
 }
 
 function removeItem(itemName) {
